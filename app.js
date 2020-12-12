@@ -61,7 +61,7 @@ function addNext() {
             writeHTMLFile(htmlRenderEmployee);
         }
         else {
-            addNextInfo(response.newRole);
+            addNextInfo(response.nextRole);
         }
     }
     ))
@@ -72,19 +72,41 @@ function addNextInfo(roleName) {
         {
             type: 'input',
             name: 'name',
-            message: 'Please enter ${}s name'
+            message: `Please enter ${roleName}'s name`
+        },
+        {
+            type: 'input',
+            name: 'id',
+            message: `Please enter ${roleName}'s id`
+        },
+        {
+            type: 'input',
+            name: 'email',
+            message: `Please enter ${roleName}'s email`
+        },
+        {
+            type: 'input',
+            name: 'github',
+            message: `Please enter ${roleName}'s github username`,
+            when: roleName == 'Engineer'
+        },
+        {
+            type: 'input',
+            name: 'school',
+            message: `Please enter ${roleName}'s school name`,
+            when: roleName == 'Intern'
         }
     ])
-
+    .then((response)=> {
+        
+    })
 }
-
-
-
-
 
 function writeHTMLFile() {
 
 }
+
+managerInfo();
 // After the user has input all employees desired, call the `render` function (required
 // above) and pass in an array containing all employee objects; the `render` function will
 // generate and return a block of HTML including templated divs for each employee!
