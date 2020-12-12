@@ -72,7 +72,7 @@ function addNextInfo(roleName) {
         {
             type: 'input',
             name: 'name',
-            message: "Please enter "
+            message: 'Please enter ${}s name'
         }
     ])
 
@@ -82,7 +82,7 @@ function addNextInfo(roleName) {
 
 
 
-fucntion writeHTMLFile() {
+function writeHTMLFile() {
 
 }
 // After the user has input all employees desired, call the `render` function (required
