@@ -56,8 +56,8 @@ function addNext() {
         }
     ])
     .then((response=> {
-        if(response.newRole == "I am done adding new members") {
-             let htmlRenderEmployee = render(employeeListArray);
+        if(response.nextRole === 'I am done adding new members') {
+            let htmlRenderEmployee = render(employeeListArray);
             writeHTMLFile(htmlRenderEmployee);
         }
         else {
@@ -98,7 +98,16 @@ function addNextInfo(roleName) {
         }
     ])
     .then((response)=> {
-        
+        switch (roleName) {
+            case 'Engineer':
+                let EngInfo = new Engineer(response.name, response.id, response.email, response.officeNumber);
+                employeeListArray.push(EngInfo); 
+                break;
+            default:
+                let IntInfo = new Intern(response.name, response.id, response.email, response.school);
+                employeeListArray.push(IntInfo);
+        }
+        addNext();
     })
 }
 
