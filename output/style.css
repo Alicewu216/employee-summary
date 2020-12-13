@@ -1,0 +1,38 @@
+body {
+    background-image: url(https://i.pinimg.com/originals/80/3b/7b/803b7b72c6dc4892c0d6ece97c936bea.jpg);
+
+}
+
+h1, h2, h3 {
+    font-family: 'Courier New', monospace;
+    font-weight: bold;
+    color: rgb(88, 87, 87);
+}
+
+.jumbotron {
+    background-image: url(https://storage.googleapis.com/petbacker/images/blog/2017/dog-and-cat-cover.jpg);
+    background-size: cover; 
+}
+
+.employee-card {
+    box-shadow: 5px 5px 5px rgb(189, 188, 188);
+    margin: 10px;
+    width: 25vw;
+}
+.list-group-item {
+    font-family: 'Courier New', monospace;
+    color: rgb(88, 87, 87);
+}
+
+.team-area {
+    display: flex;  
+    flex-wrap: wrap;
+}
+
+.card-header {
+    background-color: rgb(233, 213, 216);
+}
+
+.card-body {
+    background-color:rgb(247, 241, 241);
+}
