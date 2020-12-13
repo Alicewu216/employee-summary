@@ -103,18 +103,20 @@ function addNextInfo(roleName) {
                 let EngInfo = new Engineer(response.name, response.id, response.email, response.officeNumber);
                 employeeListArray.push(EngInfo); 
                 break;
-            default:
+                default:
                 let IntInfo = new Intern(response.name, response.id, response.email, response.school);
-                employeeListArray.push(IntInfo);
+                employeeListArray.push(IntInfo);    
         }
         addNext();
     })
 }
 
-function writeHTMLFile() {
-
+function writeHTMLFile(UpdatedHTML) {
+    if(!fs.existsSync(OUTPUT_DIR)) {
+        fs.mkdir(OUTPUT_DIR,(err) => err ? console.log(error):console.log("New output folder successfully created"));
+    }
+    fs.writeFile(outputPath,UpdatedHTML,(err) => err? console.log(err):console.log("File sucessfully writen!"));
 }
-
 managerInfo();
 // After the user has input all employees desired, call the `render` function (required
 // above) and pass in an array containing all employee objects; the `render` function will
